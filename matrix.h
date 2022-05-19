@@ -15,15 +15,12 @@ double* dot_prd(int *sizes, double *mat_1, double *mat_2) {
     if (sizes[1] != sizes[2]) { cout << ">> ERROR: invalid sizes for dot product." << endl; return nullptr; }
 
     static double *dot = (double*)malloc(sizes[0]*sizes[3]*sizeof(double));
-    int count = 0;
 
     for (int x=0; x < sizes[0]; x++) { // row of mat_1
         for (int y=0; y < sizes[3]; y++) { // col of mat_2
-            double sum=0;
             for (int z=0; z < sizes[1]; z++) { // col of mat_1
-                sum += *(mat_1 + ((x * sizes[1]) + z)) * *(mat_2 + ((z * sizes[3]) + y));
+                *(dot + (x * sizes[3]) + y) += *(mat_1 + ((x * sizes[1]) + z)) * *(mat_2 + ((z * sizes[3]) + y));
             }
-            *(dot + count++) = sum;
         }
     }
 

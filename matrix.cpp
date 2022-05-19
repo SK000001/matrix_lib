@@ -18,11 +18,11 @@ int main() {
     int sizes[4] = { r1, c1, r2, c2 };
 
     // initializing mat_1
-    double x = 0;
+    double x = 1;
 
     double *mat_1 = (double*)malloc(sizeof(double) * r1 * c1);
     for (int i=0, r=0, c=0; i < r1 * c1; ++i, ++c) {
-        *(mat_1 + i) = (x=x+1);
+        *(mat_1 + i) = x++;
 
         if ((c+1) % c1 == 0) { r++; c = -1; }
     }
@@ -32,11 +32,10 @@ int main() {
     print_matrices(mat_1, r1, c1);
 
     // initializing mat_2
-    x = 0;
 
     double *mat_2 = (double*)malloc(sizeof(double) * r2 * c2);
     for (int i=0, r=0, c=0; i < r2 * c2; ++i, ++c) {
-        *(mat_2 + i) = (x=x+2);
+        *(mat_2 + i) = --x;
 
         if ((c+1) % c2 == 0) { r++; c = -1; }
     }
