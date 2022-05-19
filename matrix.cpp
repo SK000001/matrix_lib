@@ -36,7 +36,7 @@ int main() {
 
     double *mat_2 = (double*)malloc(sizeof(double) * r2 * c2);
     for (int i=0, r=0, c=0; i < r2 * c2; ++i, ++c) {
-        *(mat_2 + i) = (x=x+1);
+        *(mat_2 + i) = (x=x+2);
 
         if ((c+1) % c2 == 0) { r++; c = -1; }
     }
