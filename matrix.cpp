@@ -48,15 +48,26 @@ int main() {
     cout << endl << "#) dot matrix: " << endl << endl;
     double *dot = dot_prd(&sizes[0], mat_1, mat_2);
     if ( dot != NULL ) { print_matrices(dot, r1, c2); }
-
     free(dot);
 
     // cross multiplication
     cout << endl << "#) cross mult matrix: " << endl << endl;
     double *mult = cross_mult(&sizes[0], mat_1, mat_2);
     if ( mult != NULL ) { print_matrices(mult, r1, c1); }
-
     free(mult);
+
+    // transpose of mat_1
+    cout << endl << "#) transpose of mat_1: " << endl << endl;
+    double *T = transpose(mat_1, r1, c1);
+    if ( T != NULL ) { print_matrices(T, c1, r1); }
+    free(T);
+
+        // transpose of mat_1
+    cout << endl << "#) transpose of mat_1: " << endl << endl;
+    T = transpose(mat_2, r2, c2);
+    if ( T != NULL ) { print_matrices(T, c2, r2); }
+    free(T);
+
     free(mat_1); free(mat_2);
     
     return 0;
