@@ -58,15 +58,15 @@ int main() {
 
     // transpose of mat_1
     cout << endl << "#) transpose of mat_1: " << endl << endl;
-    double *T = transpose(mat_1, r1, c1);
-    if ( T != NULL ) { print_matrices(T, c1, r1); }
-    free(T);
+    double *T1 = transpose(mat_1, r1, c1);
+    if ( T1 != NULL ) { print_matrices(T1, c1, r1); }
+    free(T1);
 
-        // transpose of mat_1
-    cout << endl << "#) transpose of mat_1: " << endl << endl;
-    T = transpose(mat_2, r2, c2);
-    if ( T != NULL ) { print_matrices(T, c2, r2); }
-    free(T);
+    // transpose of mat_1
+    cout << endl << "#) transpose of mat_2: " << endl << endl;
+    double *T2 = transpose(mat_2, r2, c2);
+    if ( T2 != NULL ) { print_matrices(T2, c2, r2); }
+    free(T2);
 
     free(mat_1); free(mat_2);
     
