@@ -2,6 +2,12 @@
 #include <iomanip>
 #include "matrix.h"
 
+#ifdef _WIN32
+	char cls[4] = "cls";
+#else
+	char cls[6] = "clear";
+#endif
+
 using namespace std;
 
 int main() {
@@ -79,6 +85,12 @@ int main() {
     double *sub = matrix_sub(sizes, mat_1, mat_2);
     if ( sub != NULL ) { print_matrices(sub, r1, c1); }
     free(sub);
+
+    // division of mat_1 by mat_2
+    cout << endl << "#) division of mat_1 by mat_2: " << endl << endl;
+    double *div = matrix_div(sizes, mat_1, mat_2);
+    if ( div != NULL ) { print_matrices(div, r1, c1); }
+    free(div);
 
     free(mat_1); free(mat_2);
     
