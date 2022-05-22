@@ -68,6 +68,12 @@ int main() {
     if ( T2 != NULL ) { print_matrices(T2, c2, r2); }
     free(T2);
 
+    // addiition of mat_1 and mat_2
+    cout << endl << "#) transpose of mat_2: " << endl << endl;
+    double *add = matrix_add(sizes, mat_1, mat_2);
+    if ( add != NULL ) { print_matrices(add, r1, c1); }
+    free(add);
+
     free(mat_1); free(mat_2);
     
     return 0;

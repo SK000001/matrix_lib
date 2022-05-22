@@ -14,7 +14,7 @@ using namespace std;
 double* dot_prd(int *sizes, double *mat_1, double *mat_2) {
     if (sizes[1] != sizes[2]) { cout << ">> ERROR: invalid sizes for dot product." << endl; return nullptr; }
 
-    static double *dot = (double*)malloc(sizes[0]*sizes[3]*sizeof(double));
+    double *dot = (double*)malloc(sizes[0]*sizes[3]*sizeof(double));
 
     for (int x=0; x < sizes[0]; x++) { // row of mat_1
         for (int y=0; y < sizes[3]; y++) { // col of mat_2
@@ -36,7 +36,7 @@ double* dot_prd(int *sizes, double *mat_1, double *mat_2) {
 double* cross_mult(int *sizes, double *mat_1, double *mat_2) {
     if ((sizes[0] != sizes[2]) || (sizes[1] != sizes[3])) { cout << "ERROR: invalid sizes for cross product" << endl; return nullptr; }
 
-    static double *mult = (double*)malloc(sizes[0]*sizes[1]*sizeof(double));
+    double *mult = (double*)malloc(sizes[0]*sizes[1]*sizeof(double));
 
     for (int i=0; i < sizes[0] * sizes[1]; i++) {
         *(mult+i) =  *(mat_1+i) * *(mat_2+i);
@@ -52,7 +52,6 @@ double* cross_mult(int *sizes, double *mat_1, double *mat_2) {
 /********************************************************************************************************************/
 
 double* transpose(double *mat, int r, int c) {
-    // if ((sizes[0] != sizes[2]) || (sizes[1] != sizes[3])) { cout << "ERROR: invalid sizes for cross product" << endl; return nullptr; }
 
     double *T = (double*)malloc(c*r*sizeof(double));
 
@@ -63,6 +62,25 @@ double* transpose(double *mat, int r, int c) {
     }
 
     return T;
+}
+
+/********************************************************************************************************************/
+/*                                                                                                                  */
+/*                                                  ADDITION                                                        */
+/*                                                                                                                  */
+/********************************************************************************************************************/
+
+double* matrix_add(int *sizes, double *mat_1, double *mat_2) {
+    if ((sizes[0] != sizes[2]) || (sizes[1] != sizes[3])) { cout << "ERROR: invalid sizes for cross product" << endl; return nullptr; }
+
+    int r=sizes[0], c=sizes[1];
+    double *add = (double*)malloc(r*c*sizeof(double));
+
+    for (int i=0; i < r*c; i++) {
+        *(add + i) = *(mat_1 + i) + *(mat_2 + i);
+    }
+
+    return add;
 }
 
 /********************************************************************************************************************/
