@@ -89,7 +89,7 @@ double* matrix_add(int *sizes, double *mat_1, double *mat_2) {
 /*                                                                                                                  */
 /********************************************************************************************************************/
 
-double* matrix_add(int *sizes, double *mat_1, double *mat_2) {
+double* matrix_sub(int *sizes, double *mat_1, double *mat_2) {
     if ((sizes[0] != sizes[2]) || (sizes[1] != sizes[3])) { cout << "ERROR: invalid sizes for cross product" << endl; return nullptr; }
 
     int r=sizes[0], c=sizes[1];
