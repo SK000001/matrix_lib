@@ -62,7 +62,7 @@ int main() {
     if ( T1 != NULL ) { print_matrices(T1, c1, r1); }
     free(T1);
 
-    // transpose of mat_1
+    // transpose of mat_2
     cout << endl << "#) transpose of mat_2: " << endl << endl;
     double *T2 = transpose(mat_2, r2, c2);
     if ( T2 != NULL ) { print_matrices(T2, c2, r2); }
