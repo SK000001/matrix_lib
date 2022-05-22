@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 /********************************************************************************************************************/
@@ -89,14 +90,16 @@ double* matrix_add(int *sizes, double *mat_1, double *mat_2) {
 /*                                                                                                                  */
 /********************************************************************************************************************/
 
-double* matrix_sub(int *sizes, double *mat_1, double *mat_2) {
+double* matrix_sub(int *sizes, double *mat_1, double *mat_2, int _abs=0) {
     if ((sizes[0] != sizes[2]) || (sizes[1] != sizes[3])) { cout << "ERROR: invalid sizes for cross product" << endl; return nullptr; }
 
     int r=sizes[0], c=sizes[1];
     double *sub = (double*)malloc(r*c*sizeof(double));
 
     for (int i=0; i < r*c; i++) {
-        *(sub + i) = *(mat_1 + i) - *(mat_2 + i);
+        double _sub = *(mat_1 + i) - *(mat_2 + i);
+        if (_abs) { _sub = abs(_sub); }
+        *(sub + i) = _sub;
     }
 
     return sub;

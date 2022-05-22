@@ -82,7 +82,7 @@ int main() {
 
     // subtraction of mat_1 and mat_2
     cout << endl << "#) subtraction of mat_1 and mat_2: " << endl << endl;
-    double *sub = matrix_sub(sizes, mat_1, mat_2);
+    double *sub = matrix_sub(sizes, mat_1, mat_2, 1);
     if ( sub != NULL ) { print_matrices(sub, r1, c1); }
     free(sub);
 
