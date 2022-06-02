@@ -1,5 +1,5 @@
 SRC_DIR = src
-BUILD_DIR = build/debug
+BUILD_DIR = build
 CC = g++
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_NAME = matrix
