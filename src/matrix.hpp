@@ -3,26 +3,27 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
 
 class matrix {
 
     public:
-        matrix();
-        ~matrix();
-        int size() {return _size; };
+        // matrix() = default;
+        // ~matrix();
+        int size() {return _size; }
         int row() {return _row; };
         int col() {return _col; };
-        vector<float> _matrix_() {return _matrix; }
-        vector<float> createMatrix(int r, int c);
-        vector<float> transpose();
-        vector<float> dot(vector<float> mat, int r, int c);
+        int flag() {return _flag; }
+        std::vector<float> _matrix_() {return _matrix; }
+        std::vector<float> createMatrix(int r, int c);
+        std::vector<float> transpose();
+        std::vector<float> dot(std::vector<float> mat, int r, int c);
 
     private:
         int _row;
         int _col;
         int _size;
-        vector<float> _matrix;
+        std::vector<float> _matrix;
+        int _flag;
 };
 
 #endif
