@@ -1,5 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/shivamkhadka/Desktop/Class/2nd_Sem/cpp/project/matrix_lib'
-g++ src/main.cpp src/matrix.cpp -o build/debug/matrix && ./build/debug/matrix
-make: Leaving directory `/Users/shivamkhadka/Desktop/Class/2nd_Sem/cpp/project/matrix_lib'
- 
