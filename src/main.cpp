@@ -98,7 +98,7 @@ int main() {
     cout << endl;
 
     /* MATRIX_1 + MATRIX_2 */
-    cout << endl << endl << " #) 1st matrix dot 2nd matrix: " << endl << endl;
+    cout << endl << endl << " #) 1st matrix + 2nd matrix: " << endl << endl;
     vector<float> sum = mat1->sum(mat2);
 
     for (int i=0; i < mat1->size(); i++) {

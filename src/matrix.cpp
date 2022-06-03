@@ -40,6 +40,7 @@ vector<float> matrix::dot(matrix *mat) {
     int c = mat->col();
     _flag = 0;
     if ( _col != mat->row()) { cout << "invalid dimensions"; _flag=1; vector<float> err; return err; }
+
     vector<float> _dot(_row * c), _mat = mat->_matrix_();
 
     for (int x=0; x < _row; x++) { // row of mat_1
@@ -56,10 +57,12 @@ vector<float> matrix::dot(matrix *mat) {
 vector<float> matrix::sum(matrix *mat) {
     _flag = 0;
     if ( _row != mat->row() || _col != mat->col()){ cout << "invalid dimensions"; _flag=1; vector<float> err; return err; }
-    vector<float> sum, _mat = mat->_matrix_();
+
+    vector<float> _sum(_size), _mat = mat->_matrix_();
+
     for (int i=0; i < _row*_col; i++) {
-        sum[i] = _matrix[i] + _mat[i]; 
+        _sum[i] = _matrix[i] + _mat[i]; 
     }
 
-    return sum;
+    return _sum;
 }
