@@ -66,3 +66,16 @@ vector<float> matrix::sum(matrix *mat) {
 
     return _sum;
 }
+
+vector<float> matrix::diff(matrix *mat) {
+    _flag = 0;
+    if ( _row != mat->row() || _col != mat->col()){ cout << "invalid dimensions"; _flag=1; vector<float> err; return err; }
+
+    vector<float> _sum(_size), _mat = mat->_matrix_();
+
+    for (int i=0; i < _row*_col; i++) {
+        _sum[i] = _matrix[i] - _mat[i]; 
+    }
+
+    return _sum;
+}

@@ -110,5 +110,31 @@ int main() {
     }
     cout << endl;
 
+    /* MATRIX_1 - MATRIX_2 */
+    cout << endl << endl << " #) 1st matrix - 2nd matrix: " << endl << endl;
+    vector<float> diff = mat1->diff(mat2);
+
+    for (int i=0; i < mat1->size(); i++) {
+        cout << diff[i] << " ";
+
+        if ((i+1)%mat1->col() == 0) {
+            cout << endl;
+        }
+    }
+    cout << endl;
+
+    /* MATRIX_2 - MATRIX_1 */
+    cout << endl << endl << " #) 1st matrix - 2nd matrix: " << endl << endl;
+    diff = mat2->diff(mat1);
+
+    for (int i=0; i < mat1->size(); i++) {
+        cout << diff[i] << " ";
+
+        if ((i+1)%mat1->col() == 0) {
+            cout << endl;
+        }
+    }
+    cout << endl;
+
     return 0;
 }

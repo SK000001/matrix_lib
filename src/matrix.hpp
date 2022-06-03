@@ -18,6 +18,7 @@ class matrix {
         std::vector<float> transpose();
         std::vector<float> dot(matrix *mat);
         std::vector<float> sum(matrix *mat);
+        std::vector<float> diff(matrix *mat);
 
     private:
         int _row;
