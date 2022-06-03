@@ -69,7 +69,7 @@ int main() {
 
     /* MATRIX_1 dot MATRIX_2 */
     cout << endl << endl << " #) 1st matrix dot 2nd matrix: " << endl << endl;
-    vector<float> dot = mat1->dot(mat2->_matrix_(), mat2->row(), mat2->col());
+    vector<float> dot = mat1->dot(mat2);
     if (mat1->flag() != 1) {
         /* PRINTING MATRIX_1 dot MATRIX_2 */
         for (int i=0; i < mat1->row() * mat2->col(); i++) {
@@ -84,7 +84,7 @@ int main() {
 
     /* MATRIX_2 dot MATRIX_1 */
     cout << endl << endl << " #) 2nd matrix dot 1st matrix: " << endl << endl;
-    dot = mat2->dot(mat1->_matrix_(), mat1->row(), mat1->col());
+    dot = mat2->dot(mat1);
     if (mat2->flag() != 1) {
         /* PRINTING MATRIX_1 dot MATRIX_2 */
         for (int i=0; i < mat2->row() * mat1->col(); i++) {
@@ -95,6 +95,20 @@ int main() {
             }
         }
     }
+    cout << endl;
+
+    /* MATRIX_1 + MATRIX_2 */
+    cout << endl << endl << " #) 1st matrix dot 2nd matrix: " << endl << endl;
+    vector<float> sum = mat1->sum(mat2);
+
+    for (int i=0; i < mat1->size(); i++) {
+        cout << sum[i] << " ";
+
+        if ((i+1)%mat1->col() == 0) {
+            cout << endl;
+        }
+    }
+    cout << endl;
 
     return 0;
 }

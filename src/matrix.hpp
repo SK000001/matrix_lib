@@ -16,7 +16,8 @@ class matrix {
         std::vector<float> _matrix_() {return _matrix; }
         std::vector<float> createMatrix(int r, int c);
         std::vector<float> transpose();
-        std::vector<float> dot(std::vector<float> mat, int r, int c);
+        std::vector<float> dot(matrix *mat);
+        std::vector<float> sum(matrix *mat);
 
     private:
         int _row;
