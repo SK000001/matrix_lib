@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Matrix",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "if (!(Test-Path build)) { mkdir build }; g++ -std=c++17 -Wall -Wextra src/main.cpp src/matrix.cpp -o build/matrix.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Builds the matrix project"
+    },
+    {
+      "label": "Run Matrix",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        ".\\build\\matrix.exe"
+      ],
+      "group": "test",
+      "dependsOn": "Build Matrix",
+      "detail": "Runs the matrix project"
+    }
+  ]
+}
